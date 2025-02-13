@@ -4,6 +4,10 @@ import Leftside from "./components/Leftside"
 import Rightside from "./components/Rightside"
 import { useEffect } from 'react'
 import {motion} from "framer-motion"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FaArrowUp, FaArrowDown, FaTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown, faArrowUp, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
   const[task,settask]=useState([]);
@@ -98,9 +102,9 @@ const App = () => {
                     <span className="flex-grow">{val.text}</span>
                     </div>
                     <div>
-                      <button className='bg-green-700 text-white p-1 ml-2 font-medium rounded-lg text-[10px] sm:text-xs md:text-sm ' onClick={() => moveTaskUp(index)}>up</button>
-                      <button className='bg-green-800 text-white p-1 ml-2 font-medium rounded-lg text-[10px] sm:text-xs md:text-sm' onClick={() => moveTaskDown(index)}>down</button>
-                      <button className="bg-red-700 text-white p-1 ml-2 font-medium rounded-lg text-[10px] sm:text-xs md:text-sm" onClick={()=>adddeleteditems(val.id)}>delete</button>
+                      <button className='bg-green-700 text-white p-1 ml-2 font-medium rounded-lg text-[10px] sm:text-xs md:text-sm p-2' onClick={() => moveTaskUp(index)}><FontAwesomeIcon icon={faArrowUp} /></button>
+                      <button className='bg-orange-500 text-white p-1 ml-2 font-medium rounded-lg text-[10px] sm:text-xs md:text-sm p-2' onClick={() => moveTaskDown(index)}><FontAwesomeIcon icon={faArrowDown} /></button>
+                      <button className="bg-red-700 text-white p-1 ml-2 font-medium rounded-lg text-[10px] sm:text-xs md:text-sm p-2" onClick={()=>adddeleteditems(val.id)}><FontAwesomeIcon icon={faTrash} /></button>
                     </div>
                   </motion.li>
                 )
